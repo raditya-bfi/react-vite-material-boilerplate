@@ -1,5 +1,3 @@
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
-
 import { colors as importedColors } from './colors';
 
 export const fontSize = {
@@ -21,80 +19,27 @@ export const fontSize = {
   64: '4rem',
   72: '4.5rem',
 };
+
+export const spacing = (factor: number) =>
+  [
+    '0.104vw', // 2
+    '0.208vw', // 4
+    '0.417vw', // 8
+    '0.625vw', // 12
+    '0.833vw', // 16
+    '1.042vw', // 20
+    '1.25vw', // 24
+    '1.458vw', // 28
+    '1.667vw', // 32
+    '2.5vw', // 48
+    '3.333vw', // 64
+    '4.167vw', // 80
+    '5vw', // 96
+    '6.25vw', // 120p
+  ][factor];
+
 export const colors = {
   ...importedColors,
 };
 
 export const DEFAULT_FONT_FAMILY = 'Helvetica Neue, Arial Narrow';
-
-const theme = createTheme({
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          textTransform: 'capitalize',
-        },
-      },
-    },
-  },
-  palette: {
-    common: {
-      black: colors.Black,
-      white: colors.White,
-    },
-    primary: {
-      main: colors.DarkNavy,
-      contrastText: colors.White,
-    },
-    secondary: {
-      main: colors.HavelockBlue,
-      contrastText: colors.White,
-    },
-    error: {
-      main: colors.TorchRed,
-      contrastText: colors.White,
-    },
-    text: {
-      primary: colors.Black,
-      secondary: colors.RiverBed,
-      disabled: colors.DustyGrey,
-    },
-    background: {
-      default: colors.White,
-    },
-    action: {
-      disabled: colors.DustyGrey,
-    },
-    info: {
-      main: colors.PaleBlue,
-    },
-  },
-  typography: {
-    htmlFontSize: 10,
-    fontSize: 10,
-    fontFamily: DEFAULT_FONT_FAMILY,
-    fontWeightRegular: 400,
-    fontWeightMedium: 500,
-    fontWeightBold: 700,
-  },
-  // Set baseline width to 1920
-  spacing: (factor: number) =>
-    [
-      '0.104vw', // 2
-      '0.208vw', // 4
-      '0.417vw', // 8
-      '0.625vw', // 12
-      '0.833vw', // 16
-      '1.042vw', // 20
-      '1.25vw', // 24
-      '1.458vw', // 28
-      '1.667vw', // 32
-      '2.5vw', // 48
-      '3.333vw', // 64
-      '4.167vw', // 80
-      '5vw', // 96
-      '6.25vw', // 120p
-    ][factor],
-});
-
-export default responsiveFontSizes(theme);
